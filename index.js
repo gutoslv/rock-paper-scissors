@@ -1,5 +1,5 @@
 const weapons = ['Rock', 'Paper', 'Scissors'];
-let playerSelection = 'Rock';
+let playerSelection = computerPlay();
 let computerSelection = computerPlay();
 
 function computerPlay() {
@@ -16,14 +16,29 @@ function playRound(playerSelection, computerSelection) {
         return result;
         }
     else if (playerSelection === 'Rock' && computerSelection === 'Scissors') {
-        result = 'Rock beats scissors. Player wins';
+        result = 'Rock beats Scissors. Player wins.';
         return result;
     }
     else if (playerSelection === 'Rock' && computerSelection === 'Paper') {
-        result = 'Paper beats rock. Computer wins';
+        result = 'Paper beats rock. Computer wins.';
         return result;
     }
-    else if (playerSelection === 'Paper')
+    else if (playerSelection === 'Paper' && computerSelection === 'Rock') {
+        result = 'Paper beats rock. Player wins.';
+        return result;
+    }
+    else if (playerSelection === 'Paper' && computerSelection === 'Scissors') {
+        result = 'Scissors beats paper. Computer wins.';
+        return result;
+    }
+    else if (playerSelection === 'Scissors' && computerSelection === 'Paper') {
+        result = 'Scissors beats paper. Player wins.';
+        return result;
+    }
+    else if (playerSelection === 'Scissors' && computerSelection === 'Rock') {
+        result = 'Rock beats Scissors. Computer wins.';
+        return result;
+    }
 }
 
 console.log(playRound(playerSelection, computerSelection))
