@@ -2,6 +2,7 @@ const weapons = ['Rock', 'Paper', 'Scissors'];
 let playerSelection = computerPlay();
 let computerSelection = computerPlay();
 
+//Creates the function to make the computer play
 function computerPlay() {
     let weapon = weapons[Math.floor(Math.random() * weapons.length)]
     weapon = weapon.toLowerCase();
@@ -9,6 +10,7 @@ function computerPlay() {
     return weapon
 }
 
+//Creates the function to make a round be played
 function playRound(playerSelection, computerSelection) {
 
     if(playerSelection === computerSelection) {
@@ -38,6 +40,9 @@ function playRound(playerSelection, computerSelection) {
     else if (playerSelection === 'Scissors' && computerSelection === 'Rock') {
         result = 'Rock beats Scissors. Computer wins.';
         return result;
+    }
+    else {
+        alert('Please insert Rock, Papers or Scissors!')
     }
 }
 
