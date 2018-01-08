@@ -11,6 +11,12 @@ let playerScore = 0
 let computerScore = 0
 let tieScore = 0
 
+//Creates the function for the player to play
+function playerPlay() {
+    let weapon = prompt(`Please choose your weapon (Rock, Paper, or Scissors`);
+    capitalize(weapon);
+    return weapon;
+}
 
 //Creates the function to make the computer play
 function computerPlay() {
