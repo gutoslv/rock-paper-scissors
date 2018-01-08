@@ -1,6 +1,6 @@
 //Create global variables related to user
 const weapons = ['Rock', 'Paper', 'Scissors'];
-let playerSelection = computerPlay();
+let playerSelection = playerPlay();
 let computerSelection = computerPlay();
 
 //Create global variables related to playGame() function
@@ -11,12 +11,18 @@ let playerScore = 0
 let computerScore = 0
 let tieScore = 0
 
+
 //Creates the function to make the computer play
 function computerPlay() {
     let weapon = weapons[Math.floor(Math.random() * weapons.length)]
+    capitalize(weapon);
+    return weapon;
+}
+
+//Creates the function to capitalize the weapon
+function capitalize(weapon) {
     weapon = weapon.toLowerCase();
-    weapon = weapon.charAt(0).toUpperCase() + weapon.slice(1); // first letter to uppercase
-    return weapon
+    weapon = weapon.charAt(0).toUpperCase() + weapon.slice(1);
 }
 
 //Creates the function to make a round be played
