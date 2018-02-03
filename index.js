@@ -1,15 +1,23 @@
 //Create global variables related to user
-const weapons = ['Rock', 'Paper', 'Scissors'];
+const weapons = ['rock', 'paper', 'scissors'];
 let playerSelection = playerPlay();
 let computerSelection = computerPlay();
 
 //Create global variables related to playGame() function
-const maxRound = 5
-let gameNumber = 0
-let roundNumber = 0
-let playerScore = 0
-let computerScore = 0
-let tieScore = 0
+const maxRound = 5;
+let gameNumber = 0;
+let gameWin = 0;
+let roundNumber = 0;
+let playerScore = 0;
+let computerScore = 0;
+let tieScore = 0;
+
+//Show stats
+let stats = function() {
+    console.log('----------------------------');
+    console.log('Score: ' + playerScore + ' to: ' + computerScore + " Ties: " + tieScore);
+    console.log('----------------------------');
+}
 
 //Creates the function for the player to play
 function playerPlay() {
@@ -29,6 +37,7 @@ function computerPlay() {
 function capitalize(weapon) {
     weapon = weapon.toLowerCase();
     weapon = weapon.charAt(0).toUpperCase() + weapon.slice(1);
+    return weapon;
 }
 
 //Creates the function to make a round be played
