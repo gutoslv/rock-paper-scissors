@@ -22,19 +22,14 @@ let stats = function() {
 //Creates the function for the player to play
 function playerPlay() {
     let weapon = prompt(`Please choose your weapon (Rock, Paper, or Scissors`);
-    capitalize(weapon);
+    weapon = weapon.toLowerCase();
+    weapon = weapon.charAt(0).toUpperCase() + weapon.slice(1);
     return weapon;
 }
 
 //Creates the function to make the computer play
 function computerPlay() {
     let weapon = weapons[Math.floor(Math.random() * weapons.length)]
-    capitalize(weapon);
-    return weapon;
-}
-
-//Creates the function to capitalize the weapon
-function capitalize(weapon) {
     weapon = weapon.toLowerCase();
     weapon = weapon.charAt(0).toUpperCase() + weapon.slice(1);
     return weapon;
