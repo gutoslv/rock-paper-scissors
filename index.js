@@ -87,14 +87,14 @@ function playRound(playerSelection, computerSelection) {
 
 //Creates the function to play a game
 function playGame() {
-    while (roundNumber < maxRound) {
-        playRound(playerSelection, computerSelection);
+    if (roundNumber <= maxRound) {
+        playRound(playerPlay(), computerPlay());
     }
-    if (roundNumber === maxRound) {
+    else if (roundNumber === maxRound) {
         console.log('Player Score: ' + playerScore);
         console.log('Computer Score: ' + computerScore);
         console.log('Ties: ' + tieScore);
     }
 }
 
-//console.log(playRound(playerSelection, computerSelection))
+//playGame();
